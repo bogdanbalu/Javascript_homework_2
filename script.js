@@ -21,8 +21,7 @@ let finalResult = 0;
 
 const sumNumbers = (array) => {
     for (const element of array) {
-        let result = finalResult + element;
-        finalResult = result;
+        finalResult = finalResult + element;
     }
 }
 
