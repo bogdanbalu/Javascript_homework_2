@@ -3,7 +3,7 @@ const startNumber = 0;
 const endNumber = 10;
 
 const evenNumbers = (start, end) => {
-    for (let i = start; i <= end; i += 2) {
+    for (let i = 0; i <= 10; i += 2) {
         console.log(`Numarul este: ${i}`);
     }
 }
@@ -26,8 +26,8 @@ const sumNumbers = (array) => {
     }
 }
 
-const resultSumVersionOne = sumNumbers(arr2);
-console.log(`Rezultatul operatiilor este: ${finalResult}`);
+const resultSumVersionOne = sumNumbers(arr1);
+console.log(`Rezultatul operatiilor calculat cu for este: ${finalResult}`);
 
 console.log("-----------------------------------------------------");
 
@@ -40,7 +40,7 @@ const sum = (previousValue, currentValue) => {
 }
 
 const resultCaulculateSum = getResult(arr1);
-console.log(`Rezultatul operatiilor este: ${resultCaulculateSum}`);
+console.log(`Rezultatul operatiilor calculat cu functia reduce este: ${resultCaulculateSum}`);
 
 console.log('\n');
 
@@ -57,7 +57,7 @@ const reversalArray = (array) => {
 
 const resultReversalArray = reversalArray(initialArray);
 console.log(`Array-ul initial este: ${initialArray}`);
-console.log(`Array-ul inversat este: ${newArray}`);
+console.log(`Array-ul inversat cu for este: ${newArray}`);
 
 console.log("------------------------------------------");
 
@@ -67,7 +67,7 @@ const reversalArray2 = (array) => {
 console.log(`Array-ul initial este: ${initialArray}`);
 
 const resultReversalArray2 = reversalArray2(initialArray);
-console.log(`Array-ul inversat este: ${resultReversalArray2}`);
+console.log(`Array-ul inversat cu functia reverse este: ${resultReversalArray2}`);
 
 console.log('\n');
 
@@ -75,20 +75,33 @@ console.log("Returnează numărul de vocale dintr-un șir de caractere (string)"
 
 const string = "string de test";
 
-
 const countingVowels = (string) => {
     const voice = [];
     const stringUnion = string.replace(/ /g,'');
-    const stringToArray = stringUnion.split('');
+    const stringToLowerCase = string.toLowerCase();
+    const stringToArray = stringToLowerCase.split('');
+    for (const value of stringToArray) {
+        newArrayWithVoice(value, voice)
+    }
+    return voice.length
 }
 
-const count = (value, voiceArray) => {
+const newArrayWithVoice = (value, newArray) => {
     switch(value) {
-        case "e": 
-            
+        case "a":
+        case "e":
+        case "i":
+        case "o":
+        case "u": 
+        case "ă": 
+        case "i": 
+        case "â":
+            return newArray.push(value)
     }
 }
 
+const counter = countingVowels(string);
+console.log(`Numarul de vocale este: ${counter}`);
 
 
 
