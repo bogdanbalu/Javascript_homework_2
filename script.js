@@ -3,7 +3,7 @@ const startNumber = 0;
 const endNumber = 10;
 
 const evenNumbers = (start, end) => {
-    for (let i = 0; i <= 10; i += 2) {
+    for (let i = start; i <= end; i += 2) {
         console.log(`Numarul este: ${i}`);
     }
 }
