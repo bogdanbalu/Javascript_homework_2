@@ -77,7 +77,7 @@ const string = "string de test";
 const countingVowels = (string) => {
     const voice = [];
     const stringUnion = string.replace(/ /g,'');
-    const stringToLowerCase = string.toLowerCase();
+    const stringToLowerCase = stringUnion.toLowerCase();
     const stringToArray = stringToLowerCase.split('');
     for (const value of stringToArray) {
         newArrayWithVoice(value, voice)
